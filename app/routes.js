@@ -26,14 +26,6 @@ app.config(function(
         authLevel: "logged_in"
       }
     })
-    .state("blank2", {
-      templateUrl: "app/partials/auth/sign-in.html",
-      url: "/blank/hello",
-      controller: "authCtrl",
-      data: {
-        authLevel: "common"
-      }
-    })
 
     .state("auth:sign_in", {
       templateUrl: "app/partials/auth/sign-in.html",
