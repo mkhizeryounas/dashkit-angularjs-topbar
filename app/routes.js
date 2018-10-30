@@ -15,15 +15,17 @@ app.config(function(
       url: "/home",
       controller: "mainCtrl",
       data: {
-        authLevel: "logged_in"
+        authLevel: "logged_in",
+        title: "Home"
       }
     })
-    .state("blank", {
-      templateUrl: "app/partials/blank.html",
-      url: "/blank",
+    .state("discover", {
+      templateUrl: "app/partials/discover.html",
+      url: "/discover",
       controller: "mainCtrl",
       data: {
-        authLevel: "logged_in"
+        authLevel: "logged_in",
+        title: "Discover"
       }
     })
 
@@ -32,7 +34,8 @@ app.config(function(
       url: "/auth/sign-in",
       controller: "authCtrl",
       data: {
-        authLevel: "not_logged_in"
+        authLevel: "not_logged_in",
+        title: "Sign in"
       }
     })
     .state("auth:sign_up", {
@@ -40,7 +43,8 @@ app.config(function(
       url: "/auth/sign-up",
       controller: "authCtrl",
       data: {
-        authLevel: "not_logged_in"
+        authLevel: "not_logged_in",
+        title: "Sign up"
       }
     })
 
@@ -49,7 +53,8 @@ app.config(function(
       url: "/",
       controller: "mainCtrl",
       data: {
-        authLevel: "logged_in"
+        authLevel: "logged_in",
+        title: "Home"
       }
     });
 });

@@ -80,6 +80,11 @@ app.factory("authFactory", function($localStorage, $http, $rootScope) {
 app.run(function($state, $rootScope, $transitions, authFactory) {
   $transitions.onStart({}, async function(trans) {
     try {
+      // Adding title of the route
+      document.title =
+        (trans.$to().data.title ? `${trans.$to().data.title} - ` : "") +
+        APP_NAME;
+
       let routeLevel = trans.$to().data.authLevel;
       await authFactory.authenticate();
       if (routeLevel == "logged_in") {
