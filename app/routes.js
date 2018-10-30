@@ -1,9 +1,4 @@
-app.config(function(
-  $stateProvider,
-  $urlRouterProvider,
-  $locationProvider,
-  $urlMatcherFactoryProvider
-) {
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
   // Removing /#!/ from the routes
   $locationProvider.html5Mode(true).hashPrefix("");
 
