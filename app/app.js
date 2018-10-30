@@ -12,8 +12,8 @@ app.config([
   }
 ]);
 
-// Making post request with application/json content-type headers
-app.config(function($httpProvider, $locationProvider) {
+app.config(function($httpProvider) {
+  // Making post request with application/json content-type headers
   $httpProvider.defaults.headers.post["Content-Type"] = "application/json";
   $httpProvider.interceptors.push("httpRequestInterceptor");
 });
@@ -55,7 +55,7 @@ app.factory("authFactory", function($localStorage, $http, $rootScope) {
           return true;
         } else {
           throw {
-            data: "not loged in"
+            data: "not logged in"
           };
         }
         // This block is to be removed to here

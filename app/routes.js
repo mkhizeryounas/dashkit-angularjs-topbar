@@ -1,4 +1,16 @@
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function(
+  $stateProvider,
+  $urlRouterProvider,
+  $locationProvider,
+  $urlMatcherFactoryProvider
+) {
+  // Removing /#!/ from the routes
+  $locationProvider.html5Mode(true).hashPrefix("");
+  // $urlMatcherFactoryProvider.strictMode(false);
+  // $urlMatcherFactoryProvider.caseInsensitive(true);
+
+  $urlRouterProvider.otherwise("/");
+
   $stateProvider
     .state("home", {
       templateUrl: "app/partials/home.html",
@@ -14,6 +26,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: "mainCtrl",
       data: {
         authLevel: "logged_in"
+      }
+    })
+    .state("blank2", {
+      templateUrl: "app/partials/auth/sign-in.html",
+      url: "/blank/hello",
+      controller: "authCtrl",
+      data: {
+        authLevel: "common"
       }
     })
 
@@ -42,6 +62,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
         authLevel: "logged_in"
       }
     });
-
-  $urlRouterProvider.otherwise("/home");
 });
