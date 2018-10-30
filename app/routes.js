@@ -6,8 +6,6 @@ app.config(function(
 ) {
   // Removing /#!/ from the routes
   $locationProvider.html5Mode(true).hashPrefix("");
-  // $urlMatcherFactoryProvider.strictMode(false);
-  // $urlMatcherFactoryProvider.caseInsensitive(true);
 
   $urlRouterProvider.otherwise("/");
 
