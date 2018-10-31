@@ -4,16 +4,18 @@ const path = require("path");
 const app = express();
 let port = 5000;
 
+const staticSettings = {
+  etag: false
+};
+
+app.use("/app", express.static(path.join(__dirname, "app"), staticSettings));
 app.use(
-  "/app",
-  express.static(path.join(__dirname, "app"), {
-    etag: false
-  })
+  "/assets",
+  express.static(path.join(__dirname, "assets"), staticSettings)
 );
-app.use("/assets", express.static(path.join(__dirname, "assets")));
 app.use(
   "/bower_components",
-  express.static(path.join(__dirname, "bower_components"))
+  express.static(path.join(__dirname, "bower_components"), staticSettings)
 );
 
 app.get("/*", function(req, res) {
