@@ -15,3 +15,14 @@ toastr.options = {
   showMethod: "fadeIn",
   hideMethod: "fadeOut"
 };
+
+$(document).ready(function() {
+  var topHeight = 120;
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > topHeight) {
+      $("#map").css({
+        "margin-top": `${$(window).scrollTop() - topHeight}px`
+      });
+    }
+  });
+});

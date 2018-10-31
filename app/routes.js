@@ -6,7 +6,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
   $stateProvider
     .state("home", {
-      templateUrl: "app/partials/home-db.html",
+      templateUrl: "app/partials/home.html",
       url: "/home",
       controller: "mainCtrl",
       data: {
@@ -44,7 +44,7 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     })
 
     .state("default", {
-      templateUrl: "app/partials/home-db.html",
+      templateUrl: "app/partials/home.html",
       url: "/",
       controller: "mainCtrl",
       data: {
