@@ -4,6 +4,7 @@ const path = require("path");
 const app = express();
 let port = 5000;
 
+// etag for cache
 const staticSettings = {
   etag: false
 };
